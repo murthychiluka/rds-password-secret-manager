@@ -1,4 +1,33 @@
 # rds-password-secret-manager
+```text
+                         AWS
+                          |
+            +-------------+-------------+
+            |                           |
+            ↓                           ↓
+           EC2                         RDS
+            |                      database-1
+            |                           |
+       IAM Role                         |
+            |                           |
+            ↓                           |
+     Secrets Manager <------------------+
+            |
+            | Managed by RDS
+            |
+            ↓
+      Auto-rotated password
+            |
+            ↓
+       Python / Boto3
+            |
+            ↓
+        PyMySQL :3306
+            |
+            ↓
+         RDS MySQL
+```
+
 
 ```text
 PyMySQL is a Python library/driver that allows Python programs to connect to and communicate with a MySQL database.
